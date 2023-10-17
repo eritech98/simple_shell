@@ -1,5 +1,5 @@
-#ifndef  ERICK_NTHATI
-#define  ERICK_NTHATI
+#ifndef ERICK_NTHATI
+#define ERICK_NTHATI
 
 #include <stdlib.h>
 #include <sys/wait.h>
@@ -91,7 +91,7 @@ typedef struct r_var_list_e
 
 /**
  * struct builtin_Erick - Builtin struct for command args.
- * @name: The name of the command builtin i.e cd, exit, env
+ * @name_n: The name of the command builtin i.e cd, exit, env
  * @f: data type pointer function.
  */
 typedef struct builtin_Erick
@@ -122,8 +122,10 @@ int _strspn_n(char *string_n, char *accept);
 
 /* aux_mem.c */
 void _memcpy_n(void *new_ptr, const void *pointer, unsigned int size_n);
-void *_realloc_n(void *pointer, unsigned int old_size_n, unsigned int new_size_n);
-char **_reallocdp_n(char **pointer, unsigned int old_size_n, unsigned int new_size_n);
+void *_realloc_n(void *pointer, unsigned int old_size_n,
+				unsigned int new_size_n);
+char **_reallocdp_n(char **pointer, unsigned int old_size_n,
+				unsigned int new_size_n);
 
 /* aux_str2.c */
 char *_strdup_n(const char *string_n);
@@ -140,7 +142,8 @@ void rev_string_n(char *string_n);
 int repeated_char_n(char *input_n, int e);
 int error_sep_op_n(char *input_n, int e, char last);
 int first_char_n(char *input_n, int *e);
-void print_syntax_error_n(data_shell_n *datash_n, char *input_n, int e, int bool);
+void print_syntax_error_n(data_shell_n *datash_n,
+		char *input_n, int e, int bool);
 int check_syntax_error_n(data_shell_n *datash_n, char *input_n);
 
 
@@ -157,7 +160,8 @@ char *read_line_n(int *e_eof);
 /* split.c */
 char *swap_char_n(char *input_n, int bool);
 void add_nodes_n(sep_list_n **head_Erick, line_list_n **head_l, char *input_n);
-void go_next_n(sep_list_n **list_Erick, line_list_n **list_l, data_shell_n *datash_n);
+void go_next_n(sep_list_n **list_Erick, line_list_n **list_l,
+				data_shell_n *datash_n);
 int split_commands_n(data_shell_n *datash_n, char *input_n);
 char **split_line_n(char *input_n);
 
@@ -165,7 +169,8 @@ char **split_line_n(char *input_n);
 /* rep_var.c */
 void check_env_n(r_variable **h, char *in, data_shell_n *data_n);
 int check_vars_n(r_variable **h, char *in, char *st, data_shell_n *data_n);
-char *replaced_input_n(r_variable **head, char *input_n, char *new_input, int nlen);
+char *replaced_input_n(r_variable **head, char *input_n,
+				char *new_input, int nlen);
 char *rep_var_n(char *input_n, data_shell_n *datash_n);
 
 
